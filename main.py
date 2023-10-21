@@ -15,8 +15,8 @@ np_model = YOLO('./models/license_plate_detector.pt')
 
 # load video
  
-cap = cv2.VideoCapture('Mobil Di Indonesia Lebih Bagus Bagus dan Baru Baru dibanding di Malaysia _ Cek Fakta ( Part 2 ).mp4') #using video
-# cap = cv2.VideoCapture(1) # using camera/webcam
+#cap = cv2.VideoCapture('Mobil Di Indonesia Lebih Bagus Bagus dan Baru Baru dibanding di Malaysia _ Cek Fakta ( Part 2 ).mp4') #using video
+cap = cv2.VideoCapture(1) # using camera/webcam
 
 #Vehicle class in coco128
 vehicles = [2, 3, 5, 7]
@@ -147,7 +147,7 @@ while ret:
         print(f"Elapsed time: {elapsed_time} seconds for frame number: {frame_nmr} ")  
     cv2.imshow('Webcam', frame)
     name = f"./output_frame/frame_{frame_nmr}.jpg"
-    cv2.imwrite(name, frame)     # uncomment this to save frame
+    #cv2.imwrite(name, frame)     # uncomment this to save frame
     if cv2.waitKey(1) == ord('q'):
         break
 write_csv(results, './results.csv')
